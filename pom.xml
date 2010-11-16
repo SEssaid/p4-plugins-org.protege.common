@@ -6,7 +6,7 @@
 	<artifactId>org.protege.common</artifactId>
 	<packaging>jar</packaging>
 	<name>Core Protege Libraries</name>
-	<version>${core.major.v}.${core.minor.v}.${core.micro.v}.b${core.build.n}_${buildNumber}</version>
+	<version>${core.major}.${core.minor}.${core.micro}.b${core.build}_${buildNumber}</version>
 
 	<properties>
 		<maven.compiler.source>1.5</maven.compiler.source>
