@@ -4,10 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>protege4</groupId>
 	<artifactId>org.protege.common</artifactId>
-	<packaging>jar</packaging>
+	<packaging>bundle</packaging>
 	<name>Core Protege Libraries</name>
-	<version>${core.major.version}.${core.minor.version}.${core.micro.version}.b${core.build.number}-SNAPSHOT</version>
-
+	<!-- We have to disable the feature until the bug in the plugin is solved 
+	  <version>${core.major.version}.${core.minor.version}.${core.micro.version}.b${core.build.number}-SNAPSHOT</version> 
+	 -->
+	<version>1.2.3-SNAPSHOT</version>
 	<properties>
 		<maven.compiler.source>1.5</maven.compiler.source>
 		<maven.compiler.target>1.5</maven.compiler.target>
@@ -80,30 +82,7 @@
 	</organization>
 
 	<build>
-        <finalName>${project.artifactId}-${project.version}</finalName>
 		<plugins>
-            <!-- This plugin is needed to autoincrement the version number -->
-            <plugin>
-              <groupId>org.codehaus.mojo</groupId>
-              <artifactId>buildnumber-maven-plugin</artifactId>
-              <version>1.0-beta-3</version>
-              <executions>
-                <execution>
-                  <phase>validate</phase>
-                  <goals>
-                    <goal>create</goal>
-                  </goals>
-                </execution>
-              </executions>
-              <configuration>
-                <!-- the "0" refers to item[0] which is the timestamp -->
-                <format>{0,date,yyyy_MM_dd_HH_mm_ss}</format>
-                <items>
-                  <item>timestamp</item>
-                </items>
-              </configuration>		
-            </plugin>
-
 			<!-- The properties plugin might be used to define certain parameters
 			in a properties file. for demonstration purposes we did that to
 			demonstrate how to customize the output directory (s. "next" plugin) -->
@@ -194,11 +173,6 @@
 					<target>${maven.compiler.target}</target>
 				</configuration>
 			</plugin>
-			
-			 <plugin>
-               <artifactId>maven-deploy-plugin</artifactId>
-               <version>2.5</version>
-            </plugin>
 		</plugins>
 	</build>
 	<reporting>
