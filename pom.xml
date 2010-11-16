@@ -6,7 +6,7 @@
 	<artifactId>org.protege.common</artifactId>
 	<packaging>jar</packaging>
 	<name>Core Protege Libraries</name>
-	<version>${core.major.version}.${core.minor.version}.${core.micro.version}.b${core.build.number}_${buildNumber}</version>
+	<version>${core.major.version}.${core.minor.version}.${core.micro.version}.b${core.build.number}-SNAPSHOT</version>
 
 	<properties>
 		<maven.compiler.source>1.5</maven.compiler.source>
@@ -19,13 +19,14 @@
 		<repository>
 			<id>releases</id>
 			<name>Releases</name>
-			<url>${nexus.path}</url>
+			<url>${nexus.path}/bmir-release</url>
 		</repository>
 
 		<snapshotRepository>
 			<id>snapshots</id>
 			<name>Snapshots</name>
-			<url>${nexus.path}</url>
+			<url>${nexus.path}/snapshots</url>
+			<!-- <uniqueVersion>false</uniqueVersion> -->
 		</snapshotRepository>
 		
 		
