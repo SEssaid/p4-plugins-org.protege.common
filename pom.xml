@@ -118,7 +118,7 @@
 						</goals>
 						<configuration>
 							<files>
-								<file>version.properties</file>
+								<file>version2.properties</file>
 							</files>
 						</configuration>
 					</execution>
