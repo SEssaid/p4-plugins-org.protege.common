@@ -113,7 +113,7 @@
               <extensions>true</extensions>
               <configuration>
                 <instructions>
-                  <Export-Package>javax.swing</Export-Package>
+                  <Export-Package>org.apache.log4j,org.apache.log4j.*</Export-Package>
                   <Private-Package>org.osgi.framework</Private-Package>
                   <Bundle-Activator>org.protege.common.Activator</Bundle-Activator>
                 </instructions>
