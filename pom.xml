@@ -6,10 +6,10 @@
 	<artifactId>org.protege.common</artifactId>
 	<packaging>bundle</packaging>
 	<name>Core Protege Libraries</name>
-	<!-- We have to disable the feature until the bug in the plugin is solved 
+	<!-- We have to disable the feature until the bug in the plugin is solved
 	  <version>${core.major.version}.${core.minor.version}.${core.micro.version}.b${core.build.number}-SNAPSHOT</version> 
 	 -->
-	<version>1.2.3-SNAPSHOT</version>
+	<version>4.1.0.213_SNAPSHOT</version>
 	<properties>
 		<maven.compiler.source>1.5</maven.compiler.source>
 		<maven.compiler.target>1.5</maven.compiler.target>
@@ -76,7 +76,7 @@
 		</dependency>
 	</dependencies>
 
-	<description>XML Catalog</description>
+	<description>Common Protege Libraries</description>
 	<organization>
 		<name>Stanford University, BMIR</name>
 	</organization>
@@ -113,9 +113,38 @@
               <extensions>true</extensions>
               <configuration>
                 <instructions>
-                  <Export-Package>org.apache.log4j,org.apache.log4j.*</Export-Package>
-                  <Private-Package>org.osgi.framework</Private-Package>
+                  <Bundle-SymbolicName>org.protege.common</Bundle-SymbolicName>
+                  <Bundle-Vendor>The Protege Development Team</Bundle-Vendor>
+                  <Export-Package>
+                    org.apache.*,
+                    com.jgoodies.*,
+                    org.protege.common,
+                    org.protege.common.*
+                  </Export-Package>
+                  <Import-Package>
+                    !com.ibm.*,
+                    !com.sun.*,
+                    javax.swing,
+                    javax.swing.*,
+                    javax.xml.parsers,
+                    !javax.*,
+                    org.apache.commons.*,
+                    org.apache.log4j,
+                    org.apache.log4j.spi,
+                    !org.apache.*,
+                    com.jgoodies.*,
+                    org.osgi.framework,
+                    org.w3c.dom,
+                    org.xml.*,
+                    org.protege.common,
+                    org.protege.common.*
+                  </Import-Package>
+                  <Embed-Dependency>
+                    log4j,looks,commons-logging,commons-lang
+                  </Embed-Dependency>
                   <Bundle-Activator>org.protege.common.Activator</Bundle-Activator>
+                  <Bundle-ClassPath>.,{maven-dependencies}</Bundle-ClassPath>
+                  <Include-Resource>{maven-dependencies}</Include-Resource>
                 </instructions>
                 <executions>
                   <execution>
