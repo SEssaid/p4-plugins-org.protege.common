@@ -1,0 +1,9 @@
+
+There is a seemingly known bug with hudson where its svn plugin does
+not retrieve svn:externals files.  This means that the
+version.properties file is not properly retrieved.  There is a test
+directory in org.protege.editor.core.application that we can use to
+determine when this bug is closed.  In the meantime we will run a
+cronjob that does nightly copies of the version.properties from the trunk.
+
+There is also a bug with the properties plugin that is in progress.
